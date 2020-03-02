@@ -6,6 +6,7 @@
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/string_cast.hpp>
 
 // OpenGL library includes
@@ -14,6 +15,7 @@
 #include <debuggl.h>
 #include "menger.h"
 #include "camera.h"
+
 
 int window_width = 800, window_height = 600;
 
@@ -191,6 +193,10 @@ int main(int argc, char* argv[])
 		min_bounds = glm::min(obj_vertices[i], min_bounds);
 		max_bounds = glm::max(obj_vertices[i], max_bounds);
 	}
+
+	//ADDED SO WE CAN SEE SPONGE!!! MAY CAUSE PROBLEMS WITH CAMERA LATER
+	// min_bounds = glm::dvec4(-1.0, -1.0, -1.0, 1.0);
+	// max_bounds = glm::dvec4(1.0, 1.0, -1.0, 1.0);
 	std::cout << "min_bounds = " << glm::to_string(min_bounds) << "\n";
 	std::cout << "max_bounds = " << glm::to_string(max_bounds) << "\n";
 
