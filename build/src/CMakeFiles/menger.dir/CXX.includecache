@@ -49,6 +49,8 @@ camera.h
 /u/zhenr/Cs354/MengerSponge/src/menger.cc
 menger.h
 /u/zhenr/Cs354/MengerSponge/src/menger.h
+iostream
+-
 
 /u/zhenr/Cs354/MengerSponge/src/menger.h
 glm/glm.hpp

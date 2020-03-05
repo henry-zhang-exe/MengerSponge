@@ -183,7 +183,7 @@ int main(int argc, char* argv[])
 	std::vector<glm::uvec3> obj_faces;
         
         //FIXME: Create the geometry from a Menger object (in menger.cc).
-	g_menger->set_nesting_level(1);
+	g_menger->set_nesting_level(4);
 	g_menger->generate_geometry(obj_vertices, vtx_normals, obj_faces);
 	g_menger->set_clean();
 
