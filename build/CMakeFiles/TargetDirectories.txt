@@ -1,6 +1,0 @@
-/u/zhenr/Cs354/MengerSponge/build/CMakeFiles/rebuild_cache.dir
-/u/zhenr/Cs354/MengerSponge/build/CMakeFiles/utgraphicsutil.dir
-/u/zhenr/Cs354/MengerSponge/build/CMakeFiles/edit_cache.dir
-/u/zhenr/Cs354/MengerSponge/build/src/CMakeFiles/rebuild_cache.dir
-/u/zhenr/Cs354/MengerSponge/build/src/CMakeFiles/menger.dir
-/u/zhenr/Cs354/MengerSponge/build/src/CMakeFiles/edit_cache.dir

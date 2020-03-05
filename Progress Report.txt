@@ -1,0 +1,12 @@
+Progress Report:
+
+Member 1. Claudia Watson
+Member 2. Henry Zhang
+
+
+We have successfully generated the menger cube! It is a little jank at the moment, but we will move onto the
+next portion of the assignment. Next up, we will begin keyboard and mouse support for both camera movement and
+menger cube generation. We are making good progress, and we will continue at our current (intense) rate in 
+order to finish the project on time.
+
+:)

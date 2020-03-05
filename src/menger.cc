@@ -60,7 +60,7 @@ Menger::generate_cube(glm::vec4 corner, float distance, int L, std::vector<glm::
 	float z = corner[2];
 	float one_third = (1.0f/3.0f)*distance;
 
-	int size = obj_faces.size();
+	int size = obj_faces.size()*3;
 
 	obj_vertices.push_back(glm::vec4(x + distance, y, z, 1.0f));
 	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
@@ -80,19 +80,19 @@ Menger::generate_cube(glm::vec4 corner, float distance, int L, std::vector<glm::
 
 	//back face
 	obj_vertices.push_back(glm::vec4(x + distance, y, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x,  y + distance, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
 	obj_faces.push_back(glm::uvec3(size + 6, size + 7, size + 8));
     
 	obj_vertices.push_back(glm::vec4(x + distance, y, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y + distance, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x + distance, y + distance, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, -1.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 0.0f, 1.0f, 0.0f));
 	obj_faces.push_back(glm::uvec3(size + 9, size + 10, size + 11));
 
 	//right face
@@ -114,19 +114,19 @@ Menger::generate_cube(glm::vec4 corner, float distance, int L, std::vector<glm::
 
 	//left face
 	obj_vertices.push_back(glm::vec4(x, y, z, 1.0f));
-	vtx_normals.push_back(glm::vec4(-1.0f, 0.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(1.0f, 0.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(-1.0f, 0.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(1.0f, 0.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y + distance, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(-1.0f, 0.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(1.0f, 0.0f, 0.0f, 0.0f));
 	obj_faces.push_back(glm::uvec3(size + 18, size + 19, size + 20));
 
 	obj_vertices.push_back(glm::vec4(x, y, z, 1.0f));
-	vtx_normals.push_back(glm::vec4(-1.0f, 0.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(1.0f, 0.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y + distance, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(-1.0f, 0.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(1.0f, 0.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y + distance, z, 1.0f));
-	vtx_normals.push_back(glm::vec4(-1.0f, 0.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(1.0f, 0.0f, 0.0f, 0.0f));
 	obj_faces.push_back(glm::uvec3(size + 21, size + 22, size + 23));
 
 	//top face
@@ -148,19 +148,19 @@ Menger::generate_cube(glm::vec4 corner, float distance, int L, std::vector<glm::
 
 	//bottom face
 	obj_vertices.push_back(glm::vec4(x + distance, y, z, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, -1.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 1.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y, z, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, -1.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 1.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, -1.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 1.0f, 0.0f, 0.0f));
 	obj_faces.push_back(glm::uvec3(size + 30, size + 31, size + 32));
 
 	obj_vertices.push_back(glm::vec4(x + distance, y, z, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, -1.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 1.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x, y, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, -1.0f, 0.0f, 0.0f));
+	vtx_normals.push_back(glm::vec4(0.0f, 1.0f, 0.0f, 0.0f));
 	obj_vertices.push_back(glm::vec4(x + distance, y, z - distance, 1.0f));
-	vtx_normals.push_back(glm::vec4(0.0f, -1.0f, 0.0f, 0.0f ));
+	vtx_normals.push_back(glm::vec4(0.0f, 1.0f, 0.0f, 0.0f ));
 	obj_faces.push_back(glm::uvec3(size + 33, size + 34, size + 35));
 
 
@@ -200,7 +200,7 @@ Menger::generate_menger(glm::vec4 corner, float distance, int L, std::vector<glm
 						// if not hole, 
 						// recursive call
 						 std::cout << "bitch ass\n";
-						glm::vec4 new_corner = glm::vec4(corner[0] + i * new_dist, corner[1] + j * new_dist, corner[2] - k * new_dist, 1.0f);
+						glm::vec4 new_corner = glm::vec4(corner[0] + (float)i * new_dist, corner[1] + (float)j * new_dist, corner[2] - (float)k * new_dist, 1.0f);
 						std::cout << new_corner[0] << new_corner[1] << new_corner[2] << "\n";
 						Menger::generate_menger(new_corner, new_dist, L - 1, obj_vertices, vtx_normals, obj_faces);
 					}
