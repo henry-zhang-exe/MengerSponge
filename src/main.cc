@@ -47,7 +47,7 @@ void main()
 //  Compute light direction and transform to camera coordinates
         light_direction = view * (light_position - vertex_position);
 //  Transform normal to camera coordinates
-        normal = view * vertex_normal;
+        normal = vertex_normal;
 }
 )zzz";
 
@@ -58,7 +58,7 @@ in vec4 light_direction;
 out vec4 fragment_color;
 void main()
 {
-	vec4 color = vec4(1.0, 0.0, 0.0, 1.0);
+	vec4 color = normal;
 	float dot_nl = dot(normalize(light_direction), normalize(normal));
 	dot_nl = clamp(dot_nl, 0.0, 1.0);
 	fragment_color = clamp(dot_nl * color, 0.0, 1.0);
@@ -102,14 +102,14 @@ KeyCallback(GLFWwindow* window,
 		glfwSetWindowShouldClose(window, GL_TRUE);
 	else if (key == GLFW_KEY_W && action != GLFW_RELEASE) {
 		if(g_camera.is_fps())
-			g_camera.shift_foward();
-		else
 			g_camera.shift_up();
+		else
+			g_camera.shift_foward();
 	} else if (key == GLFW_KEY_S && action != GLFW_RELEASE) {
 		if(g_camera.is_fps())
-			g_camera.shift_backward();
-		else
 			g_camera.shift_down();
+		else
+			g_camera.shift_backward();
 	} else if (key == GLFW_KEY_A && action != GLFW_RELEASE) {
 		if(g_camera.is_fps())
 			g_camera.look_right();
@@ -123,9 +123,19 @@ KeyCallback(GLFWwindow* window,
 			g_camera.shift_right();
 	} else if (key == GLFW_KEY_LEFT && action != GLFW_RELEASE) {
 		// FIXME: Left Right Up and Down
+		g_camera.rollcc();
 	} else if (key == GLFW_KEY_RIGHT && action != GLFW_RELEASE) {
+		g_camera.rollc();
 	} else if (key == GLFW_KEY_DOWN && action != GLFW_RELEASE) {
+		if(g_camera.is_fps())
+			g_camera.shift_camera_down();
+		else
+			g_camera.shift_orbit_down();
 	} else if (key == GLFW_KEY_UP && action != GLFW_RELEASE) {
+		if(g_camera.is_fps())
+			g_camera.shift_camera_up();
+		else
+			g_camera.shift_orbit_up();
 	} else if (key == GLFW_KEY_C && action != GLFW_RELEASE) {
 		g_camera.change_mode();
 		// FIXME: FPS mode on/off

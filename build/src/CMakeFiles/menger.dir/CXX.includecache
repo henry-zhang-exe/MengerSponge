@@ -13,6 +13,8 @@ camera.h
 /u/zhenr/Cs354/MengerSponge/src/camera.h
 glm/gtc/matrix_transform.hpp
 -
+math.h
+-
 
 /u/zhenr/Cs354/MengerSponge/src/camera.h
 glm/glm.hpp

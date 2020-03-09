@@ -1,5 +1,6 @@
 #include "camera.h"
 #include <glm/gtc/matrix_transform.hpp>
+#include <math.h>
 
 namespace {
 	float pan_speed = 0.1f;
@@ -15,42 +16,68 @@ glm::mat4 Camera::get_view_matrix() const
 }
 
 void Camera::shift_foward() {
-	eye_[2] -= .1;
-	center_[2] -= .1;
+	eye_[2] -= zoom_speed;
+	center_[2] -= zoom_speed;
 
 }
 
 void Camera::shift_backward() {
-	eye_[2] += .1;
-	center_[2] += .1;
+	eye_[2] += zoom_speed;
+	center_[2] += zoom_speed;
 }
 
 void Camera::shift_up() {
-	eye_[1] += .1;
-	center_[1] += .1;
+	eye_[1] += pan_speed;
+	center_[1] += pan_speed;
 }
 
 void Camera::shift_down() {
-	eye_[1] -= .1;
-	center_[1] -= .1;
+	eye_[1] -= pan_speed;
+	center_[1] -= pan_speed	;
 }
 
 void Camera::shift_right() {
-	eye_[0] += .1;
-	center_[0] += .1;
+	eye_[0] += pan_speed;
+	center_[0] += pan_speed;
 }
 
 void Camera::shift_left() {
-	eye_[0] -= .1;
-	center_[0] -= .1;
+	eye_[0] -= pan_speed;
+	center_[0] -= pan_speed;
 }
 
 void Camera::look_right() {
-	center_[0] += .1;
+	center_[0] += pan_speed;
 }
 
 void Camera::look_left() {
-	center_[0] -= .1;
+	center_[0] -= pan_speed;
+}
+
+void Camera::rollc() {
+	up_[0] = up_[0]*cos(roll_speed) - up_[1]*sin(roll_speed);
+	up_[1] = up_[0]*sin(roll_speed) + up_[1]*cos(roll_speed);	
+}
+
+void Camera::rollcc() {
+	up_[0] = up_[0]*cos(-roll_speed) - up_[1]*sin(-roll_speed);
+	up_[1] = up_[0]*sin(-roll_speed) + up_[1]*cos(-roll_speed);
+}
+
+void Camera::shift_orbit_up() {
+	center_[1] += pan_speed;
+}
+
+void Camera::shift_orbit_down() {
+	center_[1] -= pan_speed;
+}
+
+void Camera::shift_camera_up() {
+	eye_[1] += pan_speed;
+}
+
+void Camera::shift_camera_down() {
+	eye_[1] -= pan_speed;
 }
 
 bool Camera::is_fps() {

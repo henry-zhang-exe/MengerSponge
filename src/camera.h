@@ -16,6 +16,12 @@ public:
 	void rotate_left();
 	void look_right();
 	void look_left();
+	void rollc();
+	void rollcc();
+	void shift_orbit_up();
+	void shift_orbit_down();
+	void shift_camera_up();
+	void shift_camera_down();
 	bool is_fps();
 	void change_mode();
 	// FIXME: add functions to manipulate camera objects.
