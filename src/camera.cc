@@ -11,5 +11,52 @@ namespace {
 // FIXME: Calculate the view matrix
 glm::mat4 Camera::get_view_matrix() const
 {	
-	return glm::lookAt(glm::vec3(0.0f, 0.0f, 5.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+	return glm::lookAt(eye_, center_, up_);
+}
+
+void Camera::shift_foward() {
+	eye_[2] -= .1;
+	center_[2] -= .1;
+
+}
+
+void Camera::shift_backward() {
+	eye_[2] += .1;
+	center_[2] += .1;
+}
+
+void Camera::shift_up() {
+	eye_[1] += .1;
+	center_[1] += .1;
+}
+
+void Camera::shift_down() {
+	eye_[1] -= .1;
+	center_[1] -= .1;
+}
+
+void Camera::shift_right() {
+	eye_[0] += .1;
+	center_[0] += .1;
+}
+
+void Camera::shift_left() {
+	eye_[0] -= .1;
+	center_[0] -= .1;
+}
+
+void Camera::look_right() {
+	center_[0] += .1;
+}
+
+void Camera::look_left() {
+	center_[0] -= .1;
+}
+
+bool Camera::is_fps() {
+	return fps_mode;
+}
+
+void Camera::change_mode() {
+	fps_mode = !fps_mode;
 }

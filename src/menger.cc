@@ -222,7 +222,9 @@ Menger::generate_geometry(std::vector<glm::vec4>& obj_vertices,
 			  std::vector<glm::vec4>& vtx_normals,
                           std::vector<glm::uvec3>& obj_faces) 
 {	
-
+	obj_vertices.clear();
+	vtx_normals.clear();
+	obj_faces.clear();
 	// Generate initial vertices
 
 	// front bottom left vertex
