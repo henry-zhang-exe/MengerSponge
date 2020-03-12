@@ -1,5 +1,8 @@
 #include "camera.h"
 #include <glm/gtc/matrix_transform.hpp>
+#define GLM_ENABLE_EXPERIMENTAL
+#include <glm/gtx/rotate_vector.hpp>
+
 #include <math.h>
 
 namespace {
@@ -80,6 +83,26 @@ void Camera::shift_camera_down() {
 	eye_[1] -= pan_speed;
 }
 
+void Camera::zoom(double mousey) {
+	double difference = zoom_speed*(mousey - mousey_);
+	eye_[2] -= difference;
+	camera_distance_ = glm::length(center_ - eye_);
+	mousey_ = mousey;
+}
+
+void Camera::rotate_fps(double mousex, double mousey) {
+	look_ = glm::rotate(look_, -(float)(rotation_speed * (mousex_ - mousex)/100), up_);
+	glm::vec3 perpen = glm::normalize(glm::cross(look_, up_));
+	//up_ = glm::normalize(glm::cross(look_, perpen));
+	look_ = glm::rotate(look_, -(float)(rotation_speed * (mousey_ - mousey)/100), perpen);
+	center_ = look_ * camera_distance_ + eye_;
+	mousex_ = mousex;
+	mousey_ = mousey;
+}
+
+void Camera::rotate_orbital(double mousex, double mousey) {
+
+}
 bool Camera::is_fps() {
 	return fps_mode;
 }

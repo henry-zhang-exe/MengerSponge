@@ -22,8 +22,13 @@ public:
 	void shift_orbit_down();
 	void shift_camera_up();
 	void shift_camera_down();
+	void zoom(double mousey);
 	bool is_fps();
 	void change_mode();
+	void rotate_fps(double mousex, double mousey);
+	void rotate_orbital(double mousex, double mousey);
+	double mousex_ = 0;
+	double mousey_ = 0;
 	// FIXME: add functions to manipulate camera objects.
 private:
 	float camera_distance_ = 3.0;
@@ -32,6 +37,7 @@ private:
 	glm::vec3 eye_ = glm::vec3(0.0f, 0.0f, camera_distance_);
 	glm::vec3 center_ = glm::vec3(0.0f, 0.0f, 0.0f);
 	bool fps_mode = true;
+
 	// Note: you may need additional member variables
 };
 

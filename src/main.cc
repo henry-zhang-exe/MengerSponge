@@ -16,6 +16,8 @@
 #include "menger.h"
 #include "camera.h"
 
+using namespace std;
+
 
 int window_width = 800, window_height = 600;
 
@@ -163,11 +165,17 @@ bool g_mouse_pressed;
 void
 MousePosCallback(GLFWwindow* window, double mouse_x, double mouse_y)
 {
+
 	if (!g_mouse_pressed)
 		return;
+
 	if (g_current_button == GLFW_MOUSE_BUTTON_LEFT) {
+			cout << "mouse_x = " << mouse_x;
+	cout << "mouse_y = " << mouse_y;
+		g_camera.rotate_fps(mouse_x, mouse_y);
 		// FIXME: left drag
 	} else if (g_current_button == GLFW_MOUSE_BUTTON_RIGHT) {
+		g_camera.zoom(mouse_y);
 		// FIXME: middle drag
 	} else if (g_current_button == GLFW_MOUSE_BUTTON_MIDDLE) {
 		// FIXME: right drag
