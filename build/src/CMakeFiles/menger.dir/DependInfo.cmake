@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/u/zhenr/Cs354/MengerSponge/src/camera.cc" "/u/zhenr/Cs354/MengerSponge/build/src/CMakeFiles/menger.dir/camera.cc.o"
-  "/u/zhenr/Cs354/MengerSponge/src/main.cc" "/u/zhenr/Cs354/MengerSponge/build/src/CMakeFiles/menger.dir/main.cc.o"
-  "/u/zhenr/Cs354/MengerSponge/src/menger.cc" "/u/zhenr/Cs354/MengerSponge/build/src/CMakeFiles/menger.dir/menger.cc.o"
+  "/u/cwatson/Desktop/MengerSponge/src/camera.cc" "/u/cwatson/Desktop/MengerSponge/build/src/CMakeFiles/menger.dir/camera.cc.o"
+  "/u/cwatson/Desktop/MengerSponge/src/main.cc" "/u/cwatson/Desktop/MengerSponge/build/src/CMakeFiles/menger.dir/main.cc.o"
+  "/u/cwatson/Desktop/MengerSponge/src/menger.cc" "/u/cwatson/Desktop/MengerSponge/build/src/CMakeFiles/menger.dir/menger.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,7 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/u/zhenr/Cs354/MengerSponge/build/CMakeFiles/utgraphicsutil.dir/DependInfo.cmake"
+  "/u/cwatson/Desktop/MengerSponge/build/CMakeFiles/utgraphicsutil.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

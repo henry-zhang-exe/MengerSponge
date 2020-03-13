@@ -1,4 +1,4 @@
-# Install script for directory: /u/zhenr/Cs354/MengerSponge
+# Install script for directory: /u/cwatson/Desktop/MengerSponge
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/u/zhenr/Cs354/MengerSponge/build/src/cmake_install.cmake")
+  include("/u/cwatson/Desktop/MengerSponge/build/src/cmake_install.cmake")
 
 endif()
 
@@ -51,5 +51,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/u/zhenr/Cs354/MengerSponge/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/u/cwatson/Desktop/MengerSponge/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

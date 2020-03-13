@@ -1,4 +1,4 @@
-# Install script for directory: /u/zhenr/Cs354/MengerSponge/src
+# Install script for directory: /u/cwatson/Desktop/MengerSponge/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

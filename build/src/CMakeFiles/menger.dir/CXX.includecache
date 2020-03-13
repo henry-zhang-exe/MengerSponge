@@ -8,9 +8,9 @@
 
 ../lib/debuggl.h
 
-/u/zhenr/Cs354/MengerSponge/src/camera.cc
+/u/cwatson/Desktop/MengerSponge/src/camera.cc
 camera.h
-/u/zhenr/Cs354/MengerSponge/src/camera.h
+/u/cwatson/Desktop/MengerSponge/src/camera.h
 glm/gtc/matrix_transform.hpp
 -
 glm/gtx/rotate_vector.hpp
@@ -18,11 +18,11 @@ glm/gtx/rotate_vector.hpp
 math.h
 -
 
-/u/zhenr/Cs354/MengerSponge/src/camera.h
+/u/cwatson/Desktop/MengerSponge/src/camera.h
 glm/glm.hpp
 -
 
-/u/zhenr/Cs354/MengerSponge/src/main.cc
+/u/cwatson/Desktop/MengerSponge/src/main.cc
 fstream
 -
 iostream
@@ -46,17 +46,17 @@ GLFW/glfw3.h
 debuggl.h
 -
 menger.h
-/u/zhenr/Cs354/MengerSponge/src/menger.h
+/u/cwatson/Desktop/MengerSponge/src/menger.h
 camera.h
-/u/zhenr/Cs354/MengerSponge/src/camera.h
+/u/cwatson/Desktop/MengerSponge/src/camera.h
 
-/u/zhenr/Cs354/MengerSponge/src/menger.cc
+/u/cwatson/Desktop/MengerSponge/src/menger.cc
 menger.h
-/u/zhenr/Cs354/MengerSponge/src/menger.h
+/u/cwatson/Desktop/MengerSponge/src/menger.h
 iostream
 -
 
-/u/zhenr/Cs354/MengerSponge/src/menger.h
+/u/cwatson/Desktop/MengerSponge/src/menger.h
 glm/glm.hpp
 -
 vector
