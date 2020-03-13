@@ -41,15 +41,18 @@ uniform mat4 projection;
 uniform vec4 light_position;
 out vec4 light_direction;
 out vec4 normal;
+out vec4 old_normal;
+out vec4 world_position;
 void main()
 {
+	old_normal = normal;
 // Transform vertex into clipping coordinates
 	gl_Position = projection * view * vertex_position;
 // Lighting in camera coordinates
 //  Compute light direction and transform to camera coordinates
         light_direction = view * (light_position - vertex_position);
 //  Transform normal to camera coordinates
-        normal = vertex_normal;
+        normal = view * vertex_normal;
 }
 )zzz";
 
@@ -57,10 +60,11 @@ const char* fragment_shader =
 R"zzz(#version 330 core
 in vec4 normal;
 in vec4 light_direction;
+in vec4 old_normal;
 out vec4 fragment_color;
 void main()
 {
-	vec4 color = normal;
+	vec4 color = abs(old_normal);
 	float dot_nl = dot(normalize(light_direction), normalize(normal));
 	dot_nl = clamp(dot_nl, 0.0, 1.0);
 	fragment_color = clamp(dot_nl * color, 0.0, 1.0);
@@ -72,11 +76,15 @@ const char* floor_fragment_shader =
 R"zzz(#version 330 core
 in vec4 normal;
 in vec4 light_direction;
-// in vec4 world_position;
+in vec4 world_position;
 out vec4 fragment_color;
 void main()
-{
-	vec4 color = vec4(1.0, 1.0, 1.0, 1.0);
+{	
+	vec4 color;
+	if (fmod(world_position, 2.0) > 1.0)
+		color = vec4(1.0, 1.0, 1.0, 1.0);
+	else
+		color = vec4(0.0, 0.0, 0.0, 1.0);
 	float dot_nl = dot(normalize(light_direction), normalize(normal));
 	dot_nl = clamp(dot_nl, 0.0, 1.0);
 	fragment_color = clamp(dot_nl * color, 0.0, 1.0);
@@ -517,7 +525,7 @@ int main(int argc, char* argv[])
 		// 	3. Pass Uniforms
 		// 	4. Call glDrawElements, since input geometry is
 		// 	indicated by VAO.
-		
+
 		// Switch to the Floor VAO.
 		CHECK_GL_ERROR(glBindVertexArray(g_array_objects[kFloorVao]));
 
